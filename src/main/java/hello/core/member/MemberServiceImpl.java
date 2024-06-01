@@ -1,10 +1,13 @@
 package hello.core.member;
 
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+@Getter
 @Component
 public class MemberServiceImpl implements MemberService {
+    // test
     private final MemberRepository memberRepository;
 
     @Autowired // ac.getBean(MemberRepository.class)
@@ -22,8 +25,4 @@ public class MemberServiceImpl implements MemberService {
         return memberRepository.findById(memberId);
     }
 
-    // test
-    public MemberRepository getMemberRepository() {
-        return memberRepository;
-    }
 }
